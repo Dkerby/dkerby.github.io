@@ -1,0 +1,48 @@
+<!doctype html><html class="dark light" lang=en><head><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1.0" name=viewport><meta content=https://drewkerby.dev name=base><title>
+            
+                The Bring Up
+            
+        </title><meta content="The Bring Up" property=og:title><link href=https://drewkerby.dev/icon/favicon.png rel=icon type=image/png><link href=https://drewkerby.dev/fonts.css rel=stylesheet><script defer src=https://drewkerby.dev/js/codeblock.js></script><script defer src=https://drewkerby.dev/js/toc.js></script><script defer src=https://drewkerby.dev/js/note.js></script><script>MathJax = {
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ['\\(', '\\)']
+                    ]
+                }
+            };</script><script async id=MathJax-script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link title="
+    Drew Kerby
+" href=https://drewkerby.dev/atom.xml rel=alternate type=application/atom+xml><link href=https://drewkerby.dev/giallo-light.css id=syntaxLightStyle rel=stylesheet><link disabled href=https://drewkerby.dev/giallo-dark.css id=syntaxDarkStyle rel=stylesheet><link href=https://drewkerby.dev/theme/light.css rel=stylesheet><link href=https://drewkerby.dev/theme/dark.css id=darkModeStyle rel=stylesheet><script>var themeToggleMode = "toggle";</script><script src=https://drewkerby.dev/js/themetoggle.js></script><script>setTheme(getSavedTheme());</script><link href=https://drewkerby.dev/main.css media=screen rel=stylesheet><script src="https://drewkerby.dev/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e" defer></script></head><script type=module>import { animate, scrambleText } from 'https://esm.sh/animejs';
+
+    document.querySelectorAll('p').forEach(real => {
+        const rect = real.getBoundingClientRect();
+
+        const dummy = document.createElement('div');
+        dummy.textContent = real.textContent;
+        dummy.style.cssText = `
+            position: fixed;
+            top: ${rect.top}px;
+            left: ${rect.left}px;
+            width: ${rect.width}px;
+            height: ${rect.height}px;
+            overflow: hidden;
+            font: inherit;
+            color: inherit;
+            pointer-events: none;
+            margin: 0;
+        `;
+
+        real.style.visibility = 'hidden';
+        document.body.appendChild(dummy);
+
+        animate(dummy, {
+            innerHTML: scrambleText({
+                duration: 1200,
+                cursor: '░▒▓█',
+                from: 'center',
+            }),
+            onComplete: () => {
+                dummy.remove();
+                real.style.visibility = 'visible';
+            }
+        });
+    });</script><body><div class=left-content></div><div class=content><nav><div class=left-nav><a href=https://drewkerby.dev>Drew Kerby</a><div class=socials><a class=social href=https://github.com/dkerby/ rel=me> <img alt=github src=https://drewkerby.dev/icons/social/github.svg> </a><a class=social href=https://www.linkedin.com/in/dkerby0/ rel=me> <img alt=linkedin src=https://drewkerby.dev/icons/social/linkedin.svg> </a></div></div><div class=right-nav><a href=https://drewkerby.dev/posts style=margin-right:.5em>/posts</a><a href=https://drewkerby.dev/projects style=margin-right:.5em>/projects</a><a href=https://drewkerby.dev/talks style=margin-right:.5em>/talks</a><a href=https://drewkerby.dev/books style=margin-right:.5em>/books</a><a href=https://drewkerby.dev/tags style=margin-right:.5em>/tags</a><button title="$SHORTCUT to open search" class=search-button id=search-button><img alt=Search class=search-icon src=https://drewkerby.dev/icons/search.svg></button><div class="search-modal js" aria-labelledby=modalTitle id=searchModal role=dialog><div id=modal-content><h1 class=page-header id=modalTitle>Search</h1><div id=searchBar><input aria-controls=results-container aria-expanded=false autocomplete=off id=searchInput placeholder=Search... role=combobox spellcheck=false><button title="Clear search" class=clear-button id=clear-search><svg viewbox="0 -960 960 960" xmlns=http://www.w3.org/2000/svg><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button></div><div id=results-container><div id=results-info><span id=zero_results style=display:none>No results</span><span id=one_result style=display:none>1 result</span><span id=many_results style=display:none>$NUMBER results</span></div><div id=results role=listbox></div></div></div></div><a onclick="toggleTheme(); event.preventDefault();" href=# id=dark-mode-toggle> <img alt=Light id=sun-icon src=https://drewkerby.dev/icons/sun.svg> <img alt=Dark id=moon-icon src=https://drewkerby.dev/icons/moon.svg style=filter:invert()> </a><script>updateItemToggleTheme()</script></div></nav><div data-selector="main article p" class=visible-element-observer-root><main><article><div class=title><div class=page-header>The Bring Up</div><div class=meta>Posted on <time>2026-06-26</time><span class=tags-label>::</span><span class=tags> <a class=post-tag href=https://drewkerby.dev/tags/thoughts/>thoughts</a> </span></div></div><section class=body><h1 id=the-bring-up><a aria-label="Anchor link for: the-bring-up" class=zola-anchor href=#the-bring-up>The Bring Up</a></h1><p>There's a process in the hardware world called "bringing up the board", where you install all of the software and drivers needed to communicate with the board, plug it in, and flash it with a test bitstream to make sure both the board and your toolchain works as expected. This can include installing dozens of gigabytes of proprietary vendor tooling if it's a mainstream FPGA, and troubleshooting driver issues to get the board to connect on the system that you're using. Usually it's just flashing a single LED on the board.<p>This is me bringing up a small corner of the internet to share what I'm working on, things I've built, and my thoughts about software development and tech in general. I hope its more exciting that a single flashing LED.<p>Stay tuned.<p>Drew</section></article></main></div></div><div class=right-content><div class=toc><div class=heading>Table of Contents</div><ul class=toc-list><li class=parent><a href=https://drewkerby.dev/posts/markdown/#the-bring-up>The Bring Up</a></ul></div></div>
