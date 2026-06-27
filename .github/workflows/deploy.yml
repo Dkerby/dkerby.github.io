@@ -34,7 +34,7 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.22.1
         env:
           BUILD_ONLY: true
-          BUILD_FLAGS: --base-url ${{ steps.pages.outputs.base_url }}
+          BUILD_FLAGS: --base-url https://drewkerby.dev 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -47,7 +47,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://drewkerby.dev
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
