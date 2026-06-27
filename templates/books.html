@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% macro book_list(books) %}
+{%- for book in books %}
+{{ book.title }} — {{ book.author }} {%- if book.note %} ({{ book.note }}){% endif %}
+{%- endfor %}
+{% endmacro book_list %} {% block main_content %} {% if section.extra.section_path -%} {% set section = get_section(path=section.extra.section_path) %} {% endif -%} {{ post_macros::page_header(title=section.title) }} {% if section.content %}
+{{ section.content | safe }}
+{% endif %}
+{% if section.extra.nonfiction %}
+<h1>Nonfiction</h1>
+
+<p>{{ self::book_list(books=section.extra.nonfiction) }} {% endif %} {% if section.extra.fiction %}</p>
+
+<h1>Fiction</h1>
+<p>{{ self::book_list(books=section.extra.fiction) }} {% endif %}</p>
+
+{% endblock main_content %}
